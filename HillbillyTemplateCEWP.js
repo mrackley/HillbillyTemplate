@@ -16,7 +16,6 @@
   
         $().HillbillyTemplate({
             genericAlert: true,
-            moveSaveCancel: true,
             alertErrorText: "Form errors exist. Please fix form errors and try again"
         });
 

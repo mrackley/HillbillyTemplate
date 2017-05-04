@@ -22,7 +22,6 @@
  *  
  *        $().HillbillyTemplate({
  *            genericAlert: false, // true/false - show a generic error alert if SharePoint Form error happens on submission
- *            moveSaveCancel: false, // true/false - Are you also moving the save and cancel butttons?
  *            alertErrorText: "<message>" // - What message do you want to display to the users if there is a SharePoint form error on submit
  *        });
  *		
@@ -67,12 +66,16 @@
             });
         });
        
-        if(opt.moveSaveCancel)
+        if($("span.hillbillyFormCancel").length)
         {
         	$("input[type='button'][value='Cancel']").hide();
         	var cancel = $("input[type='button'][value='Cancel']")[0];
 	        $("span.hillbillyFormCancel").append($(cancel ));
 	        $(cancel).show();
+        }
+
+        if($("span.hillbillyFormSave").length)
+        {
 	        $("input[type='button'][value='Save']").hide();;	        
 	        var save = $("input[type='button'][value='Save']")[0];
 	        $("span.hillbillyFormSave").append($(save));
